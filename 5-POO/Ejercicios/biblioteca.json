@@ -1,0 +1,16 @@
+[
+    {
+        "titulo": "El se\u00f1or de los anillos",
+        "autor": "J.R.R. Tolkien",
+        "a\u00f1o_publicacion": 1954,
+        "disponible": false,
+        "unidades": 5
+    },
+    {
+        "titulo": "Cien a\u00f1os de soledad",
+        "autor": "Gabriel Garc\u00eda M\u00e1rquez",
+        "a\u00f1o_publicacion": 1967,
+        "disponible": true,
+        "unidades": 3
+    }
+]
