@@ -1,13 +1,15 @@
 import json
 
 class Libro:
-    def __init__(self, titulo, autor, año_de_publicacion, unidades, disponible=True):
+    def __init__(self, titulo, autor, año_de_publicacion, unidades,disponible=True):
         self.titulo = titulo
         self.autor = autor
         self.año_de_publicacion = año_de_publicacion
         self.unidades = unidades
         self.disponible = True
+    def mostrar_datos(self):
         
+        print(f"Título: {self.titulo}, Autor: {self.autor}, Año de Publicación: {self.año_de_publicacion}, Unidades: {self.unidades}, Disponible: {self.disponible}")
 
 class Biblioteca:
     def __init__(self, nombre):
@@ -15,29 +17,31 @@ class Biblioteca:
         self.libros_disponibles = []
 
     def mostrar_libros_disponibles(self):
-        print(f'Libros disponibles en la biblioteca {self.nombre}:')
+       
         for libro in self.libros_disponibles:
-            print(f"Título: {libro.titulo}, Autor: {libro.autor}, Año de Publicación: {libro.año_de_publicacion}, Disponible: {libro.disponible}, Unidades: {libro.unidades}")
-
+           
+              libro.mostrar_datos()
     def prestar_libro(self, titulo):
         for libro in self.libros_disponibles:
-            if libro.titulo == titulo and libro.disponible:
+            if libro.titulo == titulo and libro.disponible and libro.unidades > 0:
+                libro.unidades -= 1  # Reducir una unidad al prestar
                 libro.disponible = False
                 print(f"Libro '{titulo}' prestado exitosamente.")
                 return
-        print(f"El libro '{titulo}' no está disponible para préstamo.")
+        print(f"El libro '{titulo}' no está disponible para préstamo o no hay unidades disponibles.")
 
     def recibir_libro(self, titulo):
         for libro in self.libros_disponibles:
             if libro.titulo == titulo and not libro.disponible:
+                libro.unidades += 1  # Aumentar una unidad al recibir
                 libro.disponible = True
                 print(f"Libro '{titulo}' devuelto exitosamente.")
                 return
         print(f"El libro '{titulo}' no se puede recibir, o no está en la biblioteca.")
-
+        
     def agregar_libro(self, libro):
         self.libros_disponibles.append(libro)
-        print(f"Libro '{libro.titulo}' agregado a la biblioteca.")
+        #print(f"Libro '{libro.titulo}' agregado a la biblioteca.")
 
     def quitar_libro(self, titulo):
         for libro in self.libros_disponibles:
@@ -50,9 +54,9 @@ class Biblioteca:
     def guardar_biblioteca(self, nombre_archivo):
         libros = []
         for libro in self.libros_disponibles:
-            libros.append(vars(libro))
+            libros.append(vars(libro))#castea libro a formato diccionario
         with open(nombre_archivo, 'w') as archivo:
-            json.dump(libros, archivo, indent=4)
+            json.dump(libros, archivo, indent=4)#Toma la lista libros y la escribe en el archivo JSON proporcionado. El argumento indent=4 es opcional y agrega formato al archivo JSON para que sea legible con una sangría de 4 espacios.
         print(f"Biblioteca '{self.nombre}' guardada en el archivo '{nombre_archivo}'.")
 
 
@@ -63,6 +67,7 @@ class Biblioteca:
         biblioteca = Biblioteca("Nueva Biblioteca")
         for libro_data in data:
             libro = Libro(**libro_data)#Al utilizar **libro_data, se desempaqueta este diccionario y se pasan sus elementos como argumentos de palabras clave para el constructor de la clase Libro.
+            print(libro)
             biblioteca.agregar_libro(libro)
         return biblioteca
 """
@@ -92,12 +97,12 @@ biblioteca1.agregar_libro(libro1)
 biblioteca1.agregar_libro(libro2)
 
 #biblioteca1.prestar_libro("El señor de los anillos")
-biblioteca1.mostrar_libros_disponibles()
+#biblioteca1.mostrar_libros_disponibles()
 
-biblioteca1.guardar_biblioteca("biblioteca2.json")
+#biblioteca1.guardar_biblioteca("biblioteca.json")
 
-biblioteca2 = Biblioteca.cargar_biblioteca("biblioteca2.json")
-biblioteca2.mostrar_libros_disponibles()
+#biblioteca2 = Biblioteca.cargar_biblioteca("biblioteca.json")
+#biblioteca2.mostrar_libros_disponibles()
 
 def menu():
     print("\nBienvenido al sistema de bibliotecas")
