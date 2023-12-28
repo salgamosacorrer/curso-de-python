@@ -1,10 +1,10 @@
 import json
 
 class Libro:
-    def __init__(self, titulo, autor, año_publicacion, unidades, disponible=True):
+    def __init__(self, titulo, autor, año_de_publicacion, unidades, disponible=True):
         self.titulo = titulo
         self.autor = autor
-        self.año_publicacion = año_publicacion
+        self.año_de_publicacion = año_de_publicacion
         self.unidades = unidades
         self.disponible = True
         
@@ -17,7 +17,7 @@ class Biblioteca:
     def mostrar_libros_disponibles(self):
         print(f'Libros disponibles en la biblioteca {self.nombre}:')
         for libro in self.libros_disponibles:
-            print(f"Título: {libro.titulo}, Autor: {libro.autor}, Año de Publicación: {libro.año_publicacion}, Disponible: {libro.disponible}, Unidades: {libro.unidades}")
+            print(f"Título: {libro.titulo}, Autor: {libro.autor}, Año de Publicación: {libro.año_de_publicacion}, Disponible: {libro.disponible}, Unidades: {libro.unidades}")
 
     def prestar_libro(self, titulo):
         for libro in self.libros_disponibles:
@@ -83,6 +83,7 @@ En el contexto del código que se proporcionó:
  Entonces, para interactuar con libros o bibliotecas, necesitas crear instancias de estas clases:
 """
 # Crear libros y bibliotecas de ejemplo 
+
 libro1 = Libro("El señor de los anillos", "J.R.R. Tolkien", 1954, 5)
 libro2 = Libro("Cien años de soledad", "Gabriel García Márquez", 1967, 3)
 
@@ -90,12 +91,12 @@ biblioteca1 = Biblioteca("Biblioteca Central")
 biblioteca1.agregar_libro(libro1)
 biblioteca1.agregar_libro(libro2)
 
-biblioteca1.prestar_libro("El señor de los anillos")
+#biblioteca1.prestar_libro("El señor de los anillos")
 biblioteca1.mostrar_libros_disponibles()
 
-biblioteca1.guardar_biblioteca("biblioteca.json")
+biblioteca1.guardar_biblioteca("biblioteca2.json")
 
-biblioteca2 = Biblioteca.cargar_biblioteca("biblioteca.json")
+biblioteca2 = Biblioteca.cargar_biblioteca("biblioteca2.json")
 biblioteca2.mostrar_libros_disponibles()
 
 def menu():
@@ -109,7 +110,7 @@ def menu():
     print("7. Cargar biblioteca desde un archivo JSON")
     print("8. Salir")
 
-# Supongamos que biblioteca1 y biblioteca2 están previamente definidas...
+
 
 opcion = 0
 while opcion != 8:  # 8 es la opción para salir del menú
@@ -127,9 +128,9 @@ while opcion != 8:  # 8 es la opción para salir del menú
     elif opcion == 4:
         titulo = input("Ingresa el título del libro: ")
         autor = input("Ingresa el autor del libro: ")
-        año_publicacion = int(input("Ingresa el año de publicación del libro: "))
+        año_de_publicacion = int(input("Ingresa el año de publicación del libro: "))
         unidades = int(input("Ingresa el número de unidades del libro: "))
-        nuevo_libro = Libro(titulo, autor, año_publicacion, unidades)
+        nuevo_libro = Libro(titulo, autor, año_de_publicacion, unidades)
         biblioteca1.agregar_libro(nuevo_libro)
     elif opcion == 5:
         titulo = input("Ingresa el título del libro a quitar: ")
