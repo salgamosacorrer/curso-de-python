@@ -1,12 +1,13 @@
 import json
 
 class Libro:
-    def __init__(self, titulo, autor, año_publicacion, unidades):
+    def __init__(self, titulo, autor, año_publicacion, unidades, disponible=True):
         self.titulo = titulo
         self.autor = autor
         self.año_publicacion = año_publicacion
-        self.disponible = True
         self.unidades = unidades
+        self.disponible = True
+        
 
 class Biblioteca:
     def __init__(self, nombre):
@@ -54,17 +55,34 @@ class Biblioteca:
             json.dump(libros, archivo, indent=4)
         print(f"Biblioteca '{self.nombre}' guardada en el archivo '{nombre_archivo}'.")
 
+
     @staticmethod
     def cargar_biblioteca(nombre_archivo):
         with open(nombre_archivo, 'r') as archivo:
             data = json.load(archivo)
         biblioteca = Biblioteca("Nueva Biblioteca")
         for libro_data in data:
-            libro = Libro(**libro_data)
+            libro = Libro(**libro_data)#Al utilizar **libro_data, se desempaqueta este diccionario y se pasan sus elementos como argumentos de palabras clave para el constructor de la clase Libro.
             biblioteca.agregar_libro(libro)
         return biblioteca
+"""
+@staticmethod indica que cargar_biblioteca es un método estático en la clase Biblioteca. En este caso,
+este método estático es responsable de cargar una biblioteca desde un archivo JSON 
+""" 
+"""
+Las instancias son versiones específicas u objetos concretos de una clase. Cuando defines una clase en Python, estás creando un "molde" o una plantilla que describe cómo deberían ser los objetos de esa clase. Luego, para trabajar con estos objetos, necesitas crear instancias de esa clase.
+En el contexto del código que se proporcionó:
 
-# Crear libros y bibliotecas de ejemplo
+    Clase Libro:
+        Se define la estructura que un libro debe tener.
+        Las instancias de esta clase representarán libros individuales con sus atributos únicos como título, autor, año de publicación, etc.
+
+    Clase Biblioteca:
+        Representa una colección de libros disponibles.
+        Las instancias de esta clase representarán bibliotecas específicas que tienen su propio conjunto de libros.
+ Entonces, para interactuar con libros o bibliotecas, necesitas crear instancias de estas clases:
+"""
+# Crear libros y bibliotecas de ejemplo 
 libro1 = Libro("El señor de los anillos", "J.R.R. Tolkien", 1954, 5)
 libro2 = Libro("Cien años de soledad", "Gabriel García Márquez", 1967, 3)
 
@@ -79,3 +97,51 @@ biblioteca1.guardar_biblioteca("biblioteca.json")
 
 biblioteca2 = Biblioteca.cargar_biblioteca("biblioteca.json")
 biblioteca2.mostrar_libros_disponibles()
+
+def menu():
+    print("\nBienvenido al sistema de bibliotecas")
+    print("1. Mostrar todos los libros disponibles")
+    print("2. Prestar un libro")
+    print("3. Recibir un libro")
+    print("4. Agregar un libro a la biblioteca")
+    print("5. Quitar un libro de la biblioteca")
+    print("6. Guardar biblioteca en un archivo JSON")
+    print("7. Cargar biblioteca desde un archivo JSON")
+    print("8. Salir")
+
+# Supongamos que biblioteca1 y biblioteca2 están previamente definidas...
+
+opcion = 0
+while opcion != 8:  # 8 es la opción para salir del menú
+    menu()
+    opcion = int(input("Elige una opción (1-8): "))
+
+    if opcion == 1:
+        biblioteca1.mostrar_libros_disponibles()
+    elif opcion == 2:
+        titulo = input("Ingresa el título del libro a prestar: ")
+        biblioteca1.prestar_libro(titulo)
+    elif opcion == 3:
+        titulo = input("Ingresa el título del libro a recibir: ")
+        biblioteca1.recibir_libro(titulo)
+    elif opcion == 4:
+        titulo = input("Ingresa el título del libro: ")
+        autor = input("Ingresa el autor del libro: ")
+        año_publicacion = int(input("Ingresa el año de publicación del libro: "))
+        unidades = int(input("Ingresa el número de unidades del libro: "))
+        nuevo_libro = Libro(titulo, autor, año_publicacion, unidades)
+        biblioteca1.agregar_libro(nuevo_libro)
+    elif opcion == 5:
+        titulo = input("Ingresa el título del libro a quitar: ")
+        biblioteca1.quitar_libro(titulo)
+    elif opcion == 6:
+        nombre_archivo = input("Ingresa el nombre del archivo para guardar la biblioteca: ")
+        biblioteca1.guardar_biblioteca(nombre_archivo)
+    elif opcion == 7:
+        nombre_archivo = input("Ingresa el nombre del archivo para cargar la biblioteca: ")
+        biblioteca2 = Biblioteca.cargar_biblioteca(nombre_archivo)
+        biblioteca2.mostrar_libros_disponibles()
+    elif opcion == 8:
+        print("¡Hasta luego!")
+    else:
+        print("Opción no válida. Por favor, elige una opción del 1 al 8.")
