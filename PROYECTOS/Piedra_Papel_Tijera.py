@@ -21,7 +21,7 @@ def jugar_piedra_papel_tijeras():
          (jugador == "tijeras" and maquina == "papel"):
         print("¡Ganaste!")
     else:
-        print("¡La máquina gana!")
+        print("¡La máquina ganó!")
     
 # Juego inicial
 jugar_piedra_papel_tijeras()
