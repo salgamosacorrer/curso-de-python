@@ -5,7 +5,7 @@ class Libro:
         self.titulo = titulo
         self.autor = autor
         self.año_de_publicacion = año_de_publicacion
-        self.unidades = unidades
+        self.unidades =int(unidades)
         self.disponible = True
     def mostrar_datos(self):
         
@@ -15,9 +15,10 @@ class Biblioteca:
     def __init__(self, nombre):
         self.nombre = nombre
         self.libros_disponibles = []
-
+    
+        
     def mostrar_libros_disponibles(self):
-       
+     
         for libro in self.libros_disponibles:
            
               libro.mostrar_datos()
@@ -42,7 +43,11 @@ class Biblioteca:
     def agregar_libro(self, libro):
         self.libros_disponibles.append(libro)
         #print(f"Libro '{libro.titulo}' agregado a la biblioteca.")
-
+    def agregar_biblioteca_nueva(self, libro):
+        biblioteca = Biblioteca("Nueva Biblioteca")
+        biblioteca.agregar_libro(libro)
+        self.libros_disponibles.append(libro)
+        print(f"Libros nuevos cargados en Biblioteca '{self.nombre}'.")
     def quitar_libro(self, titulo):
         for libro in self.libros_disponibles:
             if libro.titulo == titulo:
@@ -62,14 +67,25 @@ class Biblioteca:
 
     @staticmethod
     def cargar_biblioteca(nombre_archivo):
-        with open(nombre_archivo, 'r') as archivo:
+        with open(nombre_archivo, 'r',encoding='utf-8') as archivo:
             data = json.load(archivo)
-        biblioteca = Biblioteca("Nueva Biblioteca")
+            # Crear una lista temporal para almacenar los libros
+            libros_cargados = []
+        #biblioteca = Biblioteca("Nueva Biblioteca")
+        
         for libro_data in data:
             libro = Libro(**libro_data)#Al utilizar **libro_data, se desempaqueta este diccionario y se pasan sus elementos como argumentos de palabras clave para el constructor de la clase Libro.
-            print(libro)
-            biblioteca.agregar_libro(libro)
+            libros_cargados.append(libro)
+             # Crear una nueva instancia de la biblioteca
+        biblioteca = Biblioteca("Nueva Biblioteca")
+    
+        # Agregar los libros cargados a la biblioteca
+        for libro in libros_cargados:
+           biblioteca.agregar_libro(libro)
+    
         return biblioteca
+    
+    
 """
 @staticmethod indica que cargar_biblioteca es un método estático en la clase Biblioteca. En este caso,
 este método estático es responsable de cargar una biblioteca desde un archivo JSON 
@@ -88,6 +104,7 @@ En el contexto del código que se proporcionó:
  Entonces, para interactuar con libros o bibliotecas, necesitas crear instancias de estas clases:
 """
 # Crear libros y bibliotecas de ejemplo 
+
 
 libro1 = Libro("El señor de los anillos", "J.R.R. Tolkien", 1954, 5)
 libro2 = Libro("Cien años de soledad", "Gabriel García Márquez", 1967, 3)
@@ -145,8 +162,11 @@ while opcion != 8:  # 8 es la opción para salir del menú
         biblioteca1.guardar_biblioteca(nombre_archivo)
     elif opcion == 7:
         nombre_archivo = input("Ingresa el nombre del archivo para cargar la biblioteca: ")
-        biblioteca2 = Biblioteca.cargar_biblioteca(nombre_archivo)
-        biblioteca2.mostrar_libros_disponibles()
+        biblioteca_cargada = Biblioteca.cargar_biblioteca(nombre_archivo)
+        for libro in biblioteca_cargada.libros_disponibles:
+            biblioteca1.agregar_libro(libro)
+        print("Libros cargados desde el archivo al catálogo actual.")
+    
     elif opcion == 8:
         print("¡Hasta luego!")
     else:

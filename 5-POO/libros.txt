@@ -1,0 +1,380 @@
+[
+  {
+    "titulo": "Dune",
+    "autor": "Frank Herbert",
+    "año_de_publicacion": "1965",
+    "unidades": "10",
+    "disponible": "true"
+  },
+  {
+    "titulo": "Foundation",
+    "autor": "Isaac Asimov",
+    "año_de_publicacion": "1951",
+    "unidades": "8",
+    "disponible": "true"
+  },
+  {
+    "titulo": "Ender's Game",
+    "autor": "Orson Scott Card",
+    "año_de_publicacion": "1985",
+    "unidades": "5",
+    "disponible": "true"
+  },
+  {
+    "titulo": "1984",
+    "autor": "George Orwell",
+    "año_de_publicacion": "1949",
+    "unidades": "12",
+    "disponible": "true"
+  },
+  {
+    "titulo": "Brave New World",
+    "autor": "Aldous Huxley",
+    "año_de_publicacion": "1932",
+    "unidades": "6",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Hitchhiker's Guide to the Galaxy",
+    "autor": "Douglas Adams",
+    "año_de_publicacion": "1979",
+    "unidades": "9",
+    "disponible": "true"
+  },
+  {
+    "titulo": "Neuromancer",
+    "autor": "William Gibson",
+    "año_de_publicacion": "1984",
+    "unidades": "3",
+    "disponible": "true"
+  },
+  {
+    "titulo": "Snow Crash",
+    "autor": "Neal Stephenson",
+    "año_de_publicacion": "1992",
+    "unidades": "7",
+    "disponible": "true"
+  },
+  {
+    "titulo": "Fahrenheit 451",
+    "autor": "Ray Bradbury",
+    "año_de_publicacion": "1953",
+    "unidades": "4",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The War of the Worlds",
+    "autor": "H.G. Wells",
+    "año_de_publicacion": "1898",
+    "unidades": "2",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Martian",
+    "autor": "Andy Weir",
+    "año_de_publicacion": "2011",
+    "unidades": "11",
+    "disponible": "true"
+  },
+  {
+    "titulo": "I, Robot",
+    "autor": "Isaac Asimov",
+    "año_de_publicacion": "1950",
+    "unidades": "6",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Hunger Games",
+    "autor": "Suzanne Collins",
+    "año_de_publicacion": "2008",
+    "unidades": "9",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Lord of the Rings",
+    "autor": "J.R.R. Tolkien",
+    "año_de_publicacion": "1954",
+    "unidades": "15",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Matrix",
+    "autor": "Sophia Stewart",
+    "año_de_publicacion": "1999",
+    "unidades": "7",
+    "disponible": "true"
+  },
+  {
+    "titulo": "A Wrinkle in Time",
+    "autor": "Madeleine L'Engle",
+    "año_de_publicacion": "1962",
+    "unidades": "4",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Handmaid's Tale",
+    "autor": "Margaret Atwood",
+    "año_de_publicacion": "1985",
+    "unidades": "5",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Chronicles of Narnia",
+    "autor": "C.S. Lewis",
+    "año_de_publicacion": "1950",
+    "unidades": "10",
+    "disponible": "true"
+  },
+  {
+    "titulo": "Starship Troopers",
+    "autor": "Robert A. Heinlein",
+    "año_de_publicacion": "1959",
+    "unidades": "3",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Time Machine",
+    "autor": "H.G. Wells",
+    "año_de_publicacion": "1895",
+    "unidades": "6",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Giver",
+    "autor": "Lois Lowry",
+    "año_de_publicacion": "1993",
+    "unidades": "7",
+    "disponible": "true"
+  },
+  {
+    "titulo": "Ready Player One",
+    "autor": "Ernest Cline",
+    "año_de_publicacion": "2011",
+    "unidades": "8",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Maze Runner",
+    "autor": "James Dashner",
+    "año_de_publicacion": "2009",
+    "unidades": "5",
+    "disponible": "true"
+  },
+  {
+    "titulo": "A Clockwork Orange",
+    "autor": "Anthony Burgess",
+    "año_de_publicacion": "1962",
+    "unidades": "4",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The War of the Worlds",
+    "autor": "H.G. Wells",
+    "año_de_publicacion": "1898",
+    "unidades": "2",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Martian",
+    "autor": "Andy Weir",
+    "año_de_publicacion": "2011",
+    "unidades": "11",
+    "disponible": "true"
+  },
+  {
+    "titulo": "I, Robot",
+    "autor": "Isaac Asimov",
+    "año_de_publicacion": "1950",
+    "unidades": "6",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Hunger Games",
+    "autor": "Suzanne Collins",
+    "año_de_publicacion": "2008",
+    "unidades": "9",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Lord of the Rings",
+    "autor": "J.R.R. Tolkien",
+    "año_de_publicacion": "1954",
+    "unidades": "15",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Matrix",
+    "autor": "Sophia Stewart",
+    "año_de_publicacion": "1999",
+    "unidades": "7",
+    "disponible": "true"
+  },
+  {
+    "titulo": "A Wrinkle in Time",
+    "autor": "Madeleine L'Engle",
+    "año_de_publicacion": "1962",
+    "unidades": "4",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Handmaid's Tale",
+    "autor": "Margaret Atwood",
+    "año_de_publicacion": "1985",
+    "unidades": "5",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Chronicles of Narnia",
+    "autor": "C.S. Lewis",
+    "año_de_publicacion": "1950",
+    "unidades": "10",
+    "disponible": "true"
+  },
+  {
+    "titulo": "Starship Troopers",
+    "autor": "Robert A. Heinlein",
+    "año_de_publicacion": "1959",
+    "unidades": "3",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Time Machine",
+    "autor": "H.G. Wells",
+    "año_de_publicacion": "1895",
+    "unidades": "6",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Giver",
+    "autor": "Lois Lowry",
+    "año_de_publicacion": "1993",
+    "unidades": "7",
+    "disponible": "true"
+  },
+  {
+    "titulo": "Ready Player One",
+    "autor": "Ernest Cline",
+    "año_de_publicacion": "2011",
+    "unidades": "8",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Maze Runner",
+    "autor": "James Dashner",
+    "año_de_publicacion": "2009",
+    "unidades": "5",
+    "disponible": "true"
+  },
+  {
+    "titulo": "A Clockwork Orange",
+    "autor": "Anthony Burgess",
+    "año_de_publicacion": "1962",
+    "unidades": "4",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The War of the Worlds",
+    "autor": "H.G. Wells",
+    "año_de_publicacion": "1898",
+    "unidades": "2",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Martian",
+    "autor": "Andy Weir",
+    "año_de_publicacion": "2011",
+    "unidades": "11",
+    "disponible": "true"
+  },
+  {
+    "titulo": "I, Robot",
+    "autor": "Isaac Asimov",
+    "año_de_publicacion": "1950",
+    "unidades": "6",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Hunger Games",
+    "autor": "Suzanne Collins",
+    "año_de_publicacion": "2008",
+    "unidades": "9",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Lord of the Rings",
+    "autor": "J.R.R. Tolkien",
+    "año_de_publicacion": "1954",
+    "unidades": "15",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Matrix",
+    "autor": "Sophia Stewart",
+    "año_de_publicacion": "1999",
+    "unidades": "7",
+    "disponible": "true"
+  },
+  {
+    "titulo": "A Wrinkle in Time",
+    "autor": "Madeleine L'Engle",
+    "año_de_publicacion": "1962",
+    "unidades": "4",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Handmaid's Tale",
+    "autor": "Margaret Atwood",
+    "año_de_publicacion": "1985",
+    "unidades": "5",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Chronicles of Narnia",
+    "autor": "C.S. Lewis",
+    "año_de_publicacion": "1950",
+    "unidades": "10",
+    "disponible": "true"
+  },
+  {
+    "titulo": "Starship Troopers",
+    "autor": "Robert A. Heinlein",
+    "año_de_publicacion": "1959",
+    "unidades": "3",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Time Machine",
+    "autor": "H.G. Wells",
+    "año_de_publicacion": "1895",
+    "unidades": "6",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Giver",
+    "autor": "Lois Lowry",
+    "año_de_publicacion": "1993",
+    "unidades": "7",
+    "disponible": "true"
+  },
+  {
+    "titulo": "Ready Player One",
+    "autor": "Ernest Cline",
+    "año_de_publicacion": "2011",
+    "unidades": "8",
+    "disponible": "true"
+  },
+  {
+    "titulo": "The Maze Runner",
+    "autor": "James Dashner",
+    "año_de_publicacion": "2009",
+    "unidades": "5",
+    "disponible": "true"
+  },
+  {
+    "titulo": "A Clockwork Orange",
+    "autor": "Anthony Burgess",
+    "año_de_publicacion": "1962",
+    "unidades": "4",
+    "disponible": "true"
+  }
+]
