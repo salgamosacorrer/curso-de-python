@@ -1,11 +1,11 @@
 import random
 
 def juego_adivina_numero():
-    numero_secreto = random.randint(1, 100)
+    numero_secreto = random.randint(1, 10)
     vidas = 5
     
     print("¡Bienvenido al juego Adivina el Número!")
-    print("Tienes que adivinar un número entre 1 y 100.")
+    print("Tienes que adivinar un número entre 1 y 10.")
     
     while vidas > 0:
         print(f"Tienes {vidas} vidas.")
